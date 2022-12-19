@@ -8,7 +8,7 @@ export const userSignUp =(response, navigate) => async (dispatch) => {
       icon: "⏳",
     });
     await axios
-      .post("https://tipogram.herokuapp.com/auth/signUp", response)
+      .post("https://tipogram-h94e.onrender.com/auth/signUp", response)
       .then((res) => {
         
         const userId = res.data.user._id;
@@ -34,7 +34,7 @@ export const userSignIn =
       icon: "⏳",
     });
     await axios
-      .post("https://tipogram.herokuapp.com/auth/signIn", response)
+      .post("https://tipogram-h94e.onrender.com/auth/signIn", response)
       .then((res) => {
          
        
@@ -64,7 +64,7 @@ export const userSignIn =
 
   export const getUserProfile = (resp) => async (dispatch) => {
     await axios
-      .post("https://tipogram.herokuapp.com/auth/getProfile", resp)
+      .post("https://tipogram-h94e.onrender.com/auth/getProfile", resp)
       .then((res) => {
         
         dispatch({
@@ -78,7 +78,7 @@ export const userSignIn =
 
   export const getAllUsers = () => async (dispatch) => {
     await axios
-      .get("https://tipogram.herokuapp.com/auth/getAllUsers")
+      .get("https://tipogram-h94e.onrender.com/auth/getAllUsers")
       .then((res) => {
         
         dispatch({
@@ -99,7 +99,7 @@ export const userSignIn =
       userId:userId
     }
     await axios
-    .post(`https://tipogram.herokuapp.com/dashboard/addBadges`, data)
+    .post(`https://tipogram-h94e.onrender.com/dashboard/addBadges`, data)
     .then((res) => {
       toast("New badge unlocked !",{
         icon: "🤩",
@@ -125,7 +125,7 @@ export const userSignIn =
       profileImage:profileImage,
     }
     await axios
-    .put(`https://tipogram.herokuapp.com/auth/updateUserProfile/${userId}`, data)
+    .put(`https://tipogram-h94e.onrender.com/auth/updateUserProfile/${userId}`, data)
     .then((res) => {
       toast.success("Profile updated successfully")
      setTimeout(() => {

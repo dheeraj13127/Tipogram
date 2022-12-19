@@ -100,7 +100,7 @@ export const uploadImage = (data, tipogramContract, userData, metamaskAccount) =
 				postId: res.events.ImageCreated.returnValues.id
 
 			}
-			await axios.post("https://tipogram.herokuapp.com/dashboard/updateImagesPosted", userNewData)
+			await axios.post("https://tipogram-h94e.onrender.com/dashboard/updateImagesPosted", userNewData)
 				.then(resp => {
 					toast("Successfully posted", {
 						icon: "🎉",
@@ -130,9 +130,9 @@ export const updatePostLikes = (data, tipogramContract, metamaskAccount, userDat
 				userId: userData._id,
 				postId: data
 			}
-			await axios.post("https://tipogram.herokuapp.com/dashboard/updateUserLikedposts", userNewData)
+			await axios.post("https://tipogram-h94e.onrender.com/dashboard/updateUserLikedposts", userNewData)
 				.then(async(resp) => {
-					await axios.put(`https://tipogram.herokuapp.com/dashboard/updateAuthorLikes/${authorId}`)
+					await axios.put(`https://tipogram-h94e.onrender.com/dashboard/updateAuthorLikes/${authorId}`)
 					.then(response=>{
 						toast(`You liked the post`, {
 						})
@@ -171,7 +171,7 @@ export const tipImages = (data, tipogramContract, metamaskAccount, tipAmt,author
 				authorId:authorId,
 				tipAmt:tipAmt,
 			}
-			await axios.post("https://tipogram.herokuapp.com/dashboard/updateTipsReceived", newData)
+			await axios.post("https://tipogram-h94e.onrender.com/dashboard/updateTipsReceived", newData)
 			.then(resp=>{
 				
 				toast("Thank you for the tip", {
@@ -199,7 +199,7 @@ export const tipImages = (data, tipogramContract, metamaskAccount, tipAmt,author
 export const updateAuthorLikes= (authorId) => async (dispatch) => {
 	
 	
-	await axios.put(`https://tipogram.herokuapp.com/dashboard/updateAuthorLikes/${authorId}`)
+	await axios.put(`https://tipogram-h94e.onrender.com/dashboard/updateAuthorLikes/${authorId}`)
 		.then(async (res) => {
 			console.log(res)
 			dispatch({
